@@ -91,7 +91,6 @@ int main( int argc, char const *argv[] ) {
             printf(ANSI_COLOR_MAGENTA "<-- %s\n" ANSI_COLOR_RESET , buffer);
             send(newSocket, & response, strlen( response ), 0);
             printf(ANSI_COLOR_YELLOW "--> Message sent! ID Child %d - ID father %d\n" ANSI_COLOR_RESET , getpid(),getppid());
-            //printf("child-->ssp: %d\n", serverAddress.sin_port);
             close(newSocket);
 
         }
