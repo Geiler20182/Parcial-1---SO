@@ -9,7 +9,7 @@
 
 ```
  Ejemplo: ./server.o 8080
- ```
+```
 #### 5.1 Pulsa enter
 
 ### 6. En la terminal del cliente escribe: ./client.o <port_number>
