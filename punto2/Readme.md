@@ -1,5 +1,5 @@
-# Conexión TCP socket n-clientes 1-servidor usango fork()
-## Pasos para ejecutar el programa
+# Conexión TCP socket n-clientes 1-servidor usango fork() 🚀
+## Pasos para ejecutar el programa 🔧
 
 #### 1. Abre 2 o más terminales
 #### 2. En una terminal escribe: make compile
@@ -21,7 +21,7 @@ $ ./server.o 8080
 $ ./client.o 8080
 ```
 
-## Pasos para limpiar
+## Pasos para limpiar 🤓
 #### 1. Escribe en una terminal: make clean
 ```
 $ make clean
