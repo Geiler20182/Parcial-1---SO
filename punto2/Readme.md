@@ -12,12 +12,12 @@ $ make compile
 ##### 5.1 Pulsa enter
 
 ```
- Ejemplo: ./server.o 8080
+$ ./server.o 8080
 ```
 
 #### 6. En la terminal del cliente escribe: ./client.o <port_number>
 ```
-Ejemplo: ./client.o 8080
+$ ./client.o 8080
 ```
 
 ## Pasos para limpiar
