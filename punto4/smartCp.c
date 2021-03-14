@@ -28,7 +28,7 @@ void *setSHMtoW(int *fd){
 void *setSHMtoR(int *fd){
     void *ptr;
 
-    *fd = shm_open(NAME, O_RDONLY, 0400);
+    *fd = shm_open(NAME, O_RDONLY, 0200);
     if (*fd<0){
         perror("Error in shm_open()");
         exit(EXIT_FAILURE);
@@ -49,13 +49,17 @@ int closeSHM(int fd, void *ptr, int isConsumer){
 
 // Filtro para ver si el archivo debe ser copiado o no
 int filter(char *str){
-    char lstch = str[strlen(str)-1];
     int ans = -1;
-
-    if(lstch=='c' || lstch=='h')
-        ans = 1;
+    int len = strlen(str);
+    if(len>1){
+        if(!strcmp(str+len-2,".c") || !strcmp(str+len-2,".h"))
+            ans = 1;
+        else
+            ans = 0;
+    }
     else
         ans = 0;
+
     return ans;
 }
 
@@ -165,8 +169,8 @@ int main(int argc, char *argv[]){
         files = (char (*)[NUM_FILES][FNAME_LEN])setSHMtoW(&mfd);
 
         printf("Files name array address: %p\n", files);
-        printf("== FILE NAMES READY ==\n");
         setFileNames(files, argv[1]);
+        printf("== FILE NAMES READY ==\n");
     }
     return closeSHM(mfd, (void *) files, isConsumer);
 }
